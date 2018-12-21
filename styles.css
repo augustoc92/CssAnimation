@@ -1,0 +1,86 @@
+body {
+  margin: 0;
+  background: linear-gradient(270deg, #282c34, #c5c5c5);
+  background-size: 200% 200%;
+  animation: changeBackgroundColor 10s infinite;
+}
+
+.topBar {
+  background-color: #282c34;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 3rem;
+  color: white;
+  align-items: center;
+}
+
+input[type=text] {
+  padding: .5rem;
+  width: 15%;
+  border: 2px solid #c5c5c5;
+  border-radius: 4px;
+  height: 1.5rem;
+  font-size: 16px;
+  transition: width 0.4s ease-in-out;
+}
+
+input[type=text]:focus {
+  width: 30%;
+}
+
+.generalContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding: 3rem 0;
+}
+
+.generalContainer > img {
+  width: 28%;
+  margin: 1rem 0;
+  height: 300px;
+  animation: leftToPosition .5s ease-in;
+  animation-fill-mode: backwards;
+  transform: scale(1);
+  transition: transform .4s ease-in-out;
+}
+
+.generalContainer > img:hover {
+  transform: scale(1.2);
+}
+
+.generalContainer > img:active {
+  transform: scale(3.6);
+  position: absolute;
+  margin: 4.5rem auto 0;
+  z-index: 2;
+}
+
+@keyframes changeBackgroundColor { 
+  0% {
+    background-position: 0% 50%
+  }
+  25% {
+    background-position: 50% 25%
+  }
+  50% {
+    background-position: 100% 50%
+  }
+  75% {
+    background-position: 50% 25%
+  }
+  100% {
+    background-position: 0% 50%
+  }
+}
+
+@keyframes leftToPosition {
+  from {
+    opacity: 0;
+    transform: translateX(-500px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(1);
+  }
+}
